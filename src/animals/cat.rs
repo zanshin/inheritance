@@ -1,5 +1,5 @@
-use crate::Gait;
-use crate::Noise;
+use crate::pets::Gait;
+use crate::pets::Noise;
 
 /// Cat implements both the Noise and the Gait traits.
 
