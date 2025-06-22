@@ -1,7 +1,7 @@
-use strum::EnumIter;
 use crate::animals::cat::Cat;
 use crate::animals::dog::Dog;
 use crate::animals::duck::Duck;
+pub(crate) use strum::EnumIter;
 
 // Traits
 pub trait Noise {
@@ -10,6 +10,10 @@ pub trait Noise {
 
 pub trait Gait {
     fn gait(&self);
+}
+
+pub trait Specimen {
+    fn specimen(&self);
 }
 
 // Enum of Pets
@@ -37,6 +41,16 @@ impl Gait for Pet {
             Pet::Cat(cat) => cat.gait(),
             Pet::Dog(dog) => dog.gait(),
             Pet::Duck(duck) => duck.gait(),
+        }
+    }
+}
+
+impl Specimen for Pet {
+    fn specimen(&self) {
+        match self {
+            Pet::Cat(cat) => cat.specimen(),
+            Pet::Dog(dog) => dog.specimen(),
+            Pet::Duck(duck) => duck.specimen(),
         }
     }
 }
